@@ -17,6 +17,7 @@ This project has been created with the GitHub Copilot.
 ## 🛠️ Technologies Used
 - HTML, CSS, JavaScript
 - ArcGIS API for JavaScript 4.x
+- GitHub Copilot
 
 ## 📦 Setup
 
