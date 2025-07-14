@@ -2,6 +2,10 @@
 
 This is a simple web application built using the ArcGIS API for JavaScript. It features a basemap, layer toggling, feature identification, and coordinate tracking.
 
+## GitHub Copilot
+
+This project has been created with the GitHub Copilot.
+
 ## 🚀 Features
 - Basemap with pan/zoom
 - Search widget
