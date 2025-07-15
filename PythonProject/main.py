@@ -84,6 +84,9 @@ def publish_and_share(gis, results_path, title="Buffer Analysis Results", share_
     print(f"Published and shared: {result_item.title} ({result_item.id})")
     return result_item
 
+# 6️⃣ Main Execution Workflow
+# This is the main function that orchestrates the entire workflow.
+# It authenticates, searches for feature layers, downloads data, performs analysis, and publishes results
 if __name__ == "__main__":
     # Example workflow
     gis = authenticate()
