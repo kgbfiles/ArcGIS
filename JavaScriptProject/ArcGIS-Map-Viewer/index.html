@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ArcGIS JS API - Interactive Map Viewer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- ArcGIS JS API 4.x CDN -->
+  
+  <link rel="stylesheet" href="https://js.arcgis.com/4.29/esri/themes/light/main.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>ArcGIS JS API - Interactive Map Viewer 🌍</h1>
+  </header>
+  <main>
+    <div id="mapView"></div>
+    <div id="controls">
+      <label>
+        <input type="checkbox" id="toggleLayer" checked>
+        Show Feature Layer
+      </label>
+      <span id="coords">Lat: --, Lon: --</span>
+    </div>
+  </main>
+  <script src="https://js.arcgis.com/4.29/"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
