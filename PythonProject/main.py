@@ -35,6 +35,7 @@ def search_feature_layers(gis, search_term="*", max_items=20):
     return items
 
 # 3️⃣ Download Feature Layer Data
+# This function downloads the first layer of a feature layer item as a GeoJSON file.
 def download_layer(item, out_path="data/layer.geojson"):
     flayer = item.layers[0]
     sdf = flayer.query().sdf
@@ -44,6 +45,7 @@ def download_layer(item, out_path="data/layer.geojson"):
     return sdf
 
 # 4️⃣ Buffer and Spatial Analysis
+# This function buffers a given layer and performs a spatial join with another layer.
 def buffer_and_spatial_join(schools_sdf, crime_sdf, buffer_dist=1000):
     schools_buffer = schools_sdf.copy()
     schools_buffer['geometry'] = schools_buffer.geometry.buffer(buffer_dist)
@@ -55,7 +57,21 @@ def buffer_and_spatial_join(schools_sdf, crime_sdf, buffer_dist=1000):
     return joined, joined_count
 
 # 5️⃣ Update & Share Processed Layers
+# This function publishes the results of the analysis and shares it with the public or specified groups.
 def publish_and_share(gis, results_path, title="Buffer Analysis Results", share_with="everyone"):
+    """
+    Publishes a GeoJSON result to the ArcGIS portal and shares it with specified users.
+    Args:
+        gis (arcgis.gis.GIS): The GIS object representing the ArcGIS portal connection.
+        results_path (str): Path to the GeoJSON file containing analysis results.
+        title (str, optional): Title for the published item. Defaults to "Buffer Analysis Results".
+        share_with (str, optional): Specifies sharing scope ("everyone" or other group/user). Defaults to "everyone".
+    Returns:
+        arcgis.gis.Item: The published item on the portal.
+    Example:
+        >>> item = publish_and_share(gis, "results.geojson", title="My Analysis", share_with="everyone")
+    """
+    # Add the GeoJSON results as a new item to the portal and share with everyone if specified
     item_properties = {
         'title': title,
         'type': 'GeoJson',
