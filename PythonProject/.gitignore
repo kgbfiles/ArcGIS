@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.env
+.env
+
+# Jupyter
+.ipynb_checkpoints
+
+# Data & Results
+data/
+results/
+
+# Credentials
+config/credentials.json
