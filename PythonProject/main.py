@@ -14,9 +14,12 @@ def authenticate(config_path='config/credentials.json'):
     return gis
 
 # 2️⃣ Search and List Content
+# This function searches for feature layers in the portal based on a search term.
 def search_feature_layers(gis, search_term="*", max_items=20):
     items = gis.content.search(query=f"{search_term} AND type:Feature Layer", item_type="Feature Layer", max_items=max_items)
     data = []
+    # Collect metadata for each item
+    # This will create a DataFrame and save it as a CSV file.
     for item in items:
         data.append({
             "title": item.title,
